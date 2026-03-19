@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Mamutex.cz - Brief pre UX dizajnera v3</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #222; background: #fafafa; }
+h1 { border-bottom: 3px solid #6d28d9; padding-bottom: 12px; }
+h2 { border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-top: 48px; color: #4c1d95; }
+h3 { margin-top: 20px; margin-bottom: 4px; font-size: 1.05em; }
+h3 + p { margin-top: 4px; }
+strong { color: #111; }
+a { color: #6d28d9; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; margin: 16px 0; }
+th, td { border: 1px solid #d1d5db; padding: 8px 12px; text-align: left; }
+th { background: #f3f4f6; }
+hr { border: none; border-top: 1px solid #e5e7eb; margin: 32px 0; }
+blockquote { border-left: 3px solid #d1d5db; padding-left: 16px; color: #555; margin: 8px 0 16px 0; font-style: italic; }
+</style>
+</head>
+<body>
+<h1>Mamutex.cz - Brief pre UX dizajnera: Redizajn eshopu</h1>
+<p><strong>Projekt:</strong> Mamutex.cz - Redizajn eshopu na zaklade analyzy pouzitelnosti<br />
+<strong>UX konzultant:</strong> Kvasnicka Jan | <strong>Klient:</strong> Radim Bures, radek | <strong>Vyvojar:</strong> Samuel Ondrisak<br />
+<strong>Platforma:</strong> Shoptet<br />
+<strong>Datum:</strong> 2026-03-19<br />
+<strong>Verzia:</strong> v3</p>
+<hr />
+<h2>Navigacia medzi verziami</h2>
+<ul>
+<li><a href="verzie/v1_povodna_struktura.md">v1 - Povodna struktura (bez odkazov)</a></li>
+<li><a href="verzie/v2_so_vsetkymi_komentarmi.md">v2 - Vsetky komentare (607 uloh)</a> | <a href="verzie/v2_so_vsetkymi_komentarmi.html">HTML</a></li>
+<li><strong>v3 - Prehladna struktura + Figma odkazy</strong> (aktualna)</li>
+</ul>
+<hr />
+<h2>Prioritna legenda</h2>
+<table>
+<thead>
+<tr>
+<th>Priorita</th>
+<th>Dopad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>5 z 5</strong></td>
+<td>Kriticka - najvyssi dopad na konverzie</td>
+</tr>
+<tr>
+<td><strong>4 z 5</strong></td>
+<td>Velmi vysoka - prva faza</td>
+</tr>
+<tr>
+<td><strong>3 z 5</strong></td>
+<td>Vysoka - standardna priorita</td>
+</tr>
+<tr>
+<td><strong>2 z 5</strong></td>
+<td>Stredna - dalsie fazy</td>
+</tr>
+<tr>
+<td><strong>1 z 5</strong></td>
+<td>Nizka - nice-to-have</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>1. Design System / Celkový redesign</h2>
+<h3>1.1. Revize typografie - zkontrolovat hierarchii nadpisů (H1-H6), zajistit že podnadpisy nejsou větší než H1, nastavit správné odsazení pod/nad nadpisy</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-386#comment-1472987257">#574</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462838803">#67</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1464972421">#191</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Na mnoha místech jsou podnadpisy větší než H1, nadpisy mají stejné odsazení nad i pod sebou místo menšího pod nadpisem</p>
+</blockquote>
+<h3>1.2. Definovat a sjednotit hover efekty pro všechny aktivní prvky (tlačítka, odkazy, checkboxy, fotografie v galerii, šipky)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-406#comment-1472422773">#539</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-215#comment-1463210186">#124</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471592227">#529</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Mnoho aktivních prvků nemá hover efekt, návštěvníci neví že mohou klikat. Na mobilu chybí vizuální indikace aktivních prvků (podtržení místo hover)</p>
+</blockquote>
+<h3>1.3. Vyřešit barvu odkazů - fialové odkazy berou příliš pozornosti, některé změnit na černé podtržené</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1549058422">#653</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Fialové odkazy si berou hodně pozornosti na místech kde to není potřeba, ruší konverzní cestu</p>
+</blockquote>
+<h3>1.4. Přestat používat šedou barvu pro aktivní prvky - šedá vypadá jako neaktivní/disabled</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466958051">#296</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Tlačítka, texty, ikony v šedé vypadají jako neaktivní prvky, návštěvníci na ně neklikají. Platí pro filtry, balíčky, ikony v hlavičce, kroky objednávky</p>
+</blockquote>
+<h3>1.5. Sjednotit konverzní barvu - zvážit jinou než fialovou, protože fialové menu způsobuje že CTA tlačítko nevyniká</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-378#comment-1473386282">#597</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461722334">#33</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=0-1#comment-1459524855">#5</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Konverzní tlačítko se ztrácí v celkovém fialovém designu, na stránce košíku je to problém</p>
+</blockquote>
+<h3>1.6. Zajistit minimální velikost písma 13px napříč celým webem</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-404#comment-1472407010">#536</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462828126">#66</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461734739">#35</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Na mobilu je písmo 11px, Google penalizuje za malé písmo v rámci přístupnosti, negativní hodnocení může ovlivnit celou doménu</p>
+</blockquote>
+<h3>1.7. Opravit kontrasty textů - některé šedé texty mají nedostatečný kontrast, řešit čitelnost</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465284237">#225</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462838803">#67</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1470998925">#457</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Několik míst nesplňuje AA standard, barvy jako #808080 na #DFD6EA jsou FAIL. I splněné AA standardy mohou mít zhoršenou čitelnost</p>
+</blockquote>
+<h3>1.8. Sjednotit spacing/vzdušnost - na mnoha místech příliš velké mezery oddalující obsah, na jiných příliš málo</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Klíčový prvek designu, špatný spacing odděluje související informace nebo zbytečně prodlužuje stránku</p>
+</blockquote>
+<h3>1.9. Vytvořit signature prvky a brandovou identitu pro vizuální obsah (infografiky, bloky v článcích, bannery)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471000623">#458</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467258993">#333</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461008782">#16</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Potřeba konzistentní vizuální identity Mamutex napříč celým webem, posílení brandu a důvěryhodnosti, Google umí tyto prvky hodnotit</p>
+</blockquote>
+<h3>1.10. Vytvořit specifický vizuál pro věrnostní program Mamutex+ (zlatá barva na fialovém pozadí, signature prvky, mince)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-116#comment-1471390424">#507</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469170701">#386</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Program musí být vždy jednoznačně rozeznatelný, konzistentní prezentace na všech místech eshopu</p>
+</blockquote>
+<h3>1.11. Přestat používat verzálky (velká písmena) v textech</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Doporučení z UX analýzy, hůře se čtou</p>
+</blockquote>
+<h3>1.12. Nastavit řádkování na 1.5 místo 1.8</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-380#comment-1472878235">#565</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Příliš velké řádkování, texty se hůře čtou a zabírají více místa</p>
+</blockquote>
+<h3>1.13. Formátování cen - vždy s mezerou u tisíců (2 500 Kč místo 2500 Kč), telefonní čísla s mezerami</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1470998925">#457</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467143416">#321</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461734739">#35</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Lepší čitelnost pro návštěvníky</p>
+</blockquote>
+<h3>1.14. Navrhnout ikony pro kategorie produktů</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-94#comment-1552566711">#675</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466914726">#292</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-196#comment-1465333594">#232</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Pro lepší orientaci ve vyhledávání a navigaci, návštěvník je nucen hodně číst bez ikon</p>
+</blockquote>
+<hr />
+<h2>2. Hlavička (Header) - Desktop</h2>
+<h3>2.1. Navrhnout sticky/fixní minimalizovanou hlavičku pro desktop</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Chybí sticky hlavička na desktopu, návštěvníci ztrácejí přístup k navigaci při scrollování</p>
+</blockquote>
+<h3>2.2. Přidat osobní kontakt s fotkou, jménem, telefonem a provozní dobou do hlavičky + online/offline indikátor</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-124#comment-1469224140">#392</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465040886">#195</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463177688">#106</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Budování důvěryhodnosti, zvýšení konverzního poměru. Má být i v minimalizované hlavičce košíku</p>
+</blockquote>
+<h3>2.3. Zvýraznit vyhledávací pole - přidat ikonu lupy, tmavší ohraničení, aby nevypadalo jako neaktivní</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463143205">#105</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Pole vypadá šedé/neaktivní, návštěvníci kteří vyhledávají mají vyšší konverze</p>
+</blockquote>
+<h3>2.4. Odstranit email z hlavičky, ponechat pouze telefon</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471567475">#522</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Email odvádí návštěvníky do emailového klienta, odkud se nemusí vrátit. Email stačí v patičce</p>
+</blockquote>
+<h3>2.5. Navrhnout marketingovou lištu nad hlavičkou (benefit bar)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Prostor pro komunikaci klíčových výhod, akcí</p>
+</blockquote>
+<hr />
+<h2>3. Hlavička (Header) - Mobil</h2>
+<h3>3.1. Změnit barvu ikon v hlavičce z šedé na tmavou/černou</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466958051">#296</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471570413">#523</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-102#comment-1470973104">#452</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Šedé ikony vypadají jako neaktivní, návštěvníci si myslí že nefungují</p>
+</blockquote>
+<h3>3.2. Přidat ikonu lupy do vyhledávacího pole na mobilu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-94#comment-1552562666">#674</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-100#comment-1470915373">#447</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-124#comment-1469195896">#390</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Aby bylo jasné že se jedná o vyhledávání</p>
+</blockquote>
+<h3>3.3. Přidat online/offline tečku k ikoně chatu</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471573916">#524</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462822194">#64</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Aby bylo jasné že podpora je k dispozici</p>
+</blockquote>
+<h3>3.4. Zobrazit marketingovou lištu i na mobilu nad hlavičkou</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Mobile First přístup Googlu, nesmíme znevýhodňovat mobil</p>
+</blockquote>
+<hr />
+<h2>4. Mobilní navigace (Menu)</h2>
+<h3>4.1. Oddělit řádek menu svislou čárou - oddělení názvu kategorie od šipky pro podkategorie</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-428#comment-1472862451">#561</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-9#comment-1465461211">#250</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Celý řádek vypadá jako jedna položka, ale každá část dělá něco jiného, návštěvníci neví jestli jít do kategorie nebo rozbalit</p>
+</blockquote>
+<h3>4.2. Přidat více vzdušnosti mezi odkazy v menu pro lepší touch zóny</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469125602">#373</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Aktivní prvky jsou příliš blízko sebe, Google penalizuje za malé touch zóny</p>
+</blockquote>
+<h3>4.3. Přidat podtržení k odkazům v menu aby vypadaly jako aktivní prvky</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-406#comment-1472422773">#539</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461692676">#25</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Na mobilu chybí hover efekt, podtržení je jediná indikace klikatelnosti</p>
+</blockquote>
+<h3>4.4. Opravit prosvítání navigačních teček banneru přes overlay menu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-428#comment-1472840428">#558</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Překryvné vrstvy musí mít nejvyšší z-index, body dolů od Google za překryvy</p>
+</blockquote>
+<h3>4.5. Redesign odkazů na neproduktové stránky (Poradna, O nás) - odlišný vizuál, dva sloupce</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-223#comment-1548460055">#629</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Tyto odkazy by měly být vizuálně odlišné od produktových kategorií</p>
+</blockquote>
+<hr />
+<h2>5. Homepage</h2>
+<h3>5.1. Redesign bannerů - prodejní bannery vedoucí na produkt/akci, s jasným CTA tlačítkem</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Bannery nejsou prodejní, nevdedou na konkrétní produkty. Na mobilu jsou texty nečitelné</p>
+</blockquote>
+<h3>5.2. Připravit mobilní formát bannerů (více na výšku) nebo přejít na posuvník bannerů optimalizovaných i pro mobil</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471592227">#529</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461702481">#28</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471590452">#528</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Desktopové bannery se špatně zobrazují na mobilu, texty jsou nečitelné</p>
+</blockquote>
+<h3>5.3. Přidat bannery z pravé části desktopu i do mobilní verze</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471598076">#530</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463057166">#92</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Google Mobile First - obsah chybějící na mobilu je penalizován</p>
+</blockquote>
+<h3>5.4. Zobrazit produkty v posuvníku místo statického výpisu na HP</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462873078">#73</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-406#comment-1472407698">#537</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467229303">#327</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Ušetření místa, možnost prezentovat více produktů a dalšího obsahu</p>
+</blockquote>
+<h3>5.5. Přidat šipky a tečky indikace pozice k posuvníkům produktů a bannerů</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1464944221">#186</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6094-6#comment-1472975291">#571</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-404#comment-1471619043">#535</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci si nemusí všimnout posuvníku, tečky indikují kolik pozic je k dispozici</p>
+</blockquote>
+<h3>5.6. Na mobilu zobrazovat jeden produkt na šířku místo dvou</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-406#comment-1472417360">#538</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1549080649">#655</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-382#comment-1472948354">#568</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Malé fotografie, dlouhé zalomené názvy, potřeba zobrazit více parametrů u produktů. Testující říkali že nejde poznat jak produkt vypadá</p>
+</blockquote>
+<h3>5.7. Přidat brandový nadpis nad sekci konkurenčních výhod</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467115492">#315</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461786175">#42</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466942394">#294</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Posílení značky, jasné sdělení kdo jste a co je na vás důležité</p>
+</blockquote>
+<h3>5.8. Přidat blok naposledy navštívených produktů nad patičku</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463078003">#96</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci se mohou vrátit k produktům bez hledání. Existuje doplněk Shoptet</p>
+</blockquote>
+<h3>5.9. Přidat storytelling blok o společnosti Mamutex (fotky ze skladu/výroby, hodnoty, příběh)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467380785">#343</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467034898">#301</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461708059">#30</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Budování důvěryhodnosti, autenticity, propojení se zákazníkem. Materiály z velkého skladu jsou k dispozici</p>
+</blockquote>
+<h3>5.10. Navrhnout brandový vizuál pro newsletter sekci s motivem obálky</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Lákání k odběru, upoutání pozornosti na mobilu</p>
+</blockquote>
+<h3>5.11. Přidat ikonu obálky do newsletter input pole</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Upoutání pozornosti na input pro zadání emailu</p>
+</blockquote>
+<h3>5.12. Opravit rozbité zobrazení výhod obchodu na mobilu - špatné zarovnání</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471607329">#531</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Nepůsobí dobrým dojmem, problém viditelný i na Androidu</p>
+</blockquote>
+<h3>5.13. Sjednotit zarovnání nadpisů na mobilu (na střed jako na desktopu)</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Konzistence mezi desktop a mobile verzí</p>
+</blockquote>
+<hr />
+<h2>6. Cookies / Souhlas</h2>
+<h3>6.1. Přidat ztmavení overlay za cookie lištu, souhlas v konverzní barvě</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-157#comment-1467517821">#358</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-231#comment-1463295488">#152</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462783471">#54</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník se má soustředit na potvrzení, psychologie barev pro konverzní cestu</p>
+</blockquote>
+<hr />
+<h2>7. Vyhledávání / Našeptávač (LuigisBox)</h2>
+<h3>7.1. Redesign celého vyhledávání a našeptávače - sjednotit vizuál s kategoriemi</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6077-3#comment-1469431793">#434</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467143416">#321</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467124786">#317</a> | <strong>Tagy:</strong> #grafika, #redesign, #luigis</p>
+<blockquote>
+<p>Výsledky vyhledávání vypadají jako by nepatřily do eshopu. LuigisBox potřebuje grafické úpravy, půl roku je to provizorní</p>
+</blockquote>
+<h3>7.2. Zvýraznit hledanou frázi jinou barvou ve výsledcích vyhledávání</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-225#comment-1548477073">#635</a> | <strong>Tagy:</strong> #grafika, #luigis</p>
+<blockquote>
+<p>Návštěvníkům chyběla kotva k tomu co hledají, fráze není dostatečně viditelná</p>
+</blockquote>
+<h3>7.3. Opravit zkracování názvů produktů ve vyhledávání</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-223#comment-1548470495">#631</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-145#comment-1467466021">#350</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467125882">#318</a> | <strong>Tagy:</strong> #luigis</p>
+<blockquote>
+<p>Důležité informace v názvech nejsou vidět, lidé se musí proklikávat tam a zpět, ztrácí čas</p>
+</blockquote>
+<h3>7.4. Vyřešit aby dvě stejná tlačítka vedle sebe v našeptávači nebyla matoucí - jedno zpracovat jako kolečka</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-225#comment-1548474120">#632</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Rozhodovací paralýza, dvě stejná tlačítka dělají něco jiného</p>
+</blockquote>
+<h3>7.5. LuigisBox - změnit barvu suggested tagů z konverzní na jinou</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-223#comment-1548460055">#629</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462828126">#66</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461714680">#32</a> | <strong>Tagy:</strong> #grafika, #luigis</p>
+<blockquote>
+<p>Neměly by být v konverzní barvě, pletou si je s CTA tlačítky</p>
+</blockquote>
+<h3>7.6. Přidat počet výsledků k záložkám ve vyhledávání, opravit neaktivní vzhled</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #luigis</p>
+<blockquote>
+<p>Záložka Články vypadá neaktivně, chybí indikace kolik výsledků se skrývá</p>
+</blockquote>
+<h3>7.7. Přepínač Produkty/Články umístit pod nadpis vlevo</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Lepší viditelnost pro návštěvníky</p>
+</blockquote>
+<h3>7.8. Otočit pořadí cen - nejdřív přeškrtnutá původní, pak aktuální větším písmem</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Standard na který jsou návštěvníci zvyklí</p>
+</blockquote>
+<h3>7.9. Zvětšit fotografie ve výsledcích aby štítky nezasahovaly do fotek na dva řádky</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-225#comment-1548475171">#633</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Štítky na dva řádky zhoršují výběr produktů</p>
+</blockquote>
+<hr />
+<h2>8. Stránka výsledků vyhledávání</h2>
+<h3>8.1. Sjednotit stránku výsledků s kategorickými výpisy - stejný H1 styl, řazení formou lišty, jednotný produktový výpis</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-94#comment-1469404311">#422</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-94#comment-1469406431">#423</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-223#comment-1463254224">#138</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Design vypadá jako by návštěvník byl jinde, může bojovat s důvěryhodností</p>
+</blockquote>
+<h3>8.2. Navrhnout stav pro 'Nic nenalezeno' - vizuál, rozcestník kategorií, osobní kontakt, nejprodávanější produkty</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463177688">#106</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník nesmí zůstat na mrtvé stránce, musí mít cestu dál</p>
+</blockquote>
+<h3>8.3. Přidat drobečkovou navigaci (Domů -&gt; Vyhledávání)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-338#comment-1473216818">#577</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471032042">#463</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Návštěvník musí vědět kde se v hierarchii nachází</p>
+</blockquote>
+<hr />
+<h2>9. Kategorie / Produktové výpisy</h2>
+<h3>9.1. Kompletní redesign filtrace - nový grafický design filtrů (Shoptet default je nevyhovující)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Filtrace je na špatném místě, graficky nevyhovující, potřeba kompletně předělat i na mobilu</p>
+</blockquote>
+<h3>9.2. Mobilní filtrace jako popup/modal okno s tlačítkem potvrdit</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-382#comment-1472902913">#567</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463177688">#106</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462828126">#66</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník se soustředí jen na filtrování, neruší okolní prvky</p>
+</blockquote>
+<h3>9.3. Výraznější tlačítko Filtrovat na mobilu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-400#comment-1471592227">#529</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-378#comment-1473386282">#597</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci kteří filtrují mají vyšší konverze, potřebujeme je více vést k filtrování</p>
+</blockquote>
+<h3>9.4. Ztmavit okolí při otevření řazení na mobilu</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Soustředění návštěvníka na výběr řazení</p>
+</blockquote>
+<h3>9.5. Přidat box s aktivními filtry nad výpis produktů s možností zrušit</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-196#comment-1465333594">#232</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-120#comment-1471402587">#514</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466914726">#292</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Důležité pro vstupní stránky, návštěvník neví že výpis je filtrovaný</p>
+</blockquote>
+<h3>9.6. Navrhnout posuvník/slider pro číselné filtry (výška, šířka, hloubka, nosnost)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Pohodlnější nastavení rozsahu pro návštěvníky</p>
+</blockquote>
+<h3>9.7. Přesunout šipku rozbalení filtrů na konec řádku</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Standard pro rozbalovací prvky, lepší přehlednost</p>
+</blockquote>
+<h3>9.8. Zobrazit prvních 8 hodnot filtru, zbytek za tlačítkem 'Dalších (X)'</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465206780">#211</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Nezahltit návštěvníka hodnotami jednoho filtru</p>
+</blockquote>
+<h3>9.9. Přidat osobní kontakt pod filtry v sidebaru</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465240047">#217</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462783471">#54</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Přímý vliv na konverze a důvěryhodnost</p>
+</blockquote>
+<h3>9.10. Odstranit loga platebních metod z filtrace sidebaru</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465238349">#216</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Lidé je tu nehledají, patří do patičky</p>
+</blockquote>
+<h3>9.11. Přidat počty produktů v závorce k podkategoriím</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-182#comment-1465314626">#227</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Lepší přehled kolik produktů je za jednotlivými možnostmi</p>
+</blockquote>
+<h3>9.12. Zvětšit fotografie u podkategorií, dát obrázek nad text</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Lepší rozpoznatelnost typu produktů</p>
+</blockquote>
+<h3>9.13. Přidat jednotky k číselným filtrům (mm, cm, kg)</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Návštěvníci nemusí vědět v jaké jednotce filtrují</p>
+</blockquote>
+<h3>9.14. Přidat stránkování - 10-15 řádků na stránku</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465122570">#200</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Příliš dlouhý výpis negativně ovlivňuje rychlost načítání a konverze</p>
+</blockquote>
+<h3>9.15. Výpis konkurenčních výhod pod produkty v kategorii</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465129446">#205</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-229#comment-1463294191">#151</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Kategorie je často vstupní stránkou, potřeba komunikovat výhody</p>
+</blockquote>
+<h3>9.16. Tlačítko 'Nahoru' na konci výpisu produktů</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Rychlý návrat k filtrům a podkategoriím</p>
+</blockquote>
+<h3>9.17. Podkategorie znovu zobrazit i pod výpisem produktů</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465127285">#202</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462783471">#54</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463071250">#93</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Po scrollu produktů si návštěvník lépe uvědomí co chce a proklikne se hlouběji = vyšší konverze</p>
+</blockquote>
+<h3>9.18. Dlaždice podkategorií nesmí být v konverzní barvě</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1548521912">#637</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Konverzní barva jen pro konverzní prvky, ne pro výpis podkategorií</p>
+</blockquote>
+<h3>9.19. Přidat parametry pod název produktu v produktové kartě ve výpisu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-340#comment-1473237095">#583</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467125882">#318</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-406#comment-1472417360">#538</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Testující chtěli vidět parametry (nosnost, rozměry) přímo ve výpisu, nejvyšší priorita z testování (5/5)</p>
+</blockquote>
+<h3>9.20. Přidat skladovost do produktové karty ve výpisu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Chybí informace o dostupnosti, důležitá pro rozhodování</p>
+</blockquote>
+<hr />
+<h2>10. Produktový detail - Galerie a Fotografie</h2>
+<h3>10.1. Přidat šipky pro listování fotografiemi v galerii + hover efekt na šipky</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466834560">#283</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465244633">#219</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-215#comment-1463208018">#120</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci neví že jsou další fotky, zvýšení počtu zobrazených fotek zvyšuje konverze</p>
+</blockquote>
+<h3>10.2. Na mobilu přidat šipku doprava u hlavní fotografie a gesto swipe</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466942394">#294</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466914726">#292</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466834560">#283</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Aby návštěvník viděl že jsou další fotky, zvýšení konverzí</p>
+</blockquote>
+<h3>10.3. Přidat hover efekt na miniatury fotografií</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462822194">#64</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466837173">#284</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-320#comment-1473438768">#602</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Aby bylo jasné že je možné kliknout a otevřít galerii</p>
+</blockquote>
+<h3>10.4. Řadit štítky na fotce podle délky aby co nejméně zasahovaly</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466832858">#282</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Lepší viditelnost produktové fotografie</p>
+</blockquote>
+<h3>10.5. Přidat do galerie i negrafický obsah - fakta, výhody, reference (jako denatura.cz)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467322284">#338</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Galerie nemusí být jen fotky, může obsahovat prvky podporující konverzi</p>
+</blockquote>
+<h3>10.6. Přidat fotky s rozměry do galerie u všech produktů</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466865585">#287</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466914726">#292</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-196#comment-1465333594">#232</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Testující se hodně ptali na rozměry, chtěli je vidět vizuálně</p>
+</blockquote>
+<h3>10.7. Řešení proporcionality fotek regálů - regály různých výšek zobrazeny stejně velké zkreslují</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Fotky generované AI podle vyfocené předlohy, ořez zkresluje proporce</p>
+</blockquote>
+<h3>10.8. Vytvořit místo pro nahrání lifestyle fotek zákazníků k recenzím</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Potřeba autentických fotek od zákazníků</p>
+</blockquote>
+<hr />
+<h2>11. Produktový detail - Konverzní zóna</h2>
+<h3>11.1. Přidat příznaky s top vlastnostmi (ikona + text): Nosnost, Rozměry, Počet polic, Montáž 6 minut</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466914726">#292</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6095-13#comment-1473433414">#600</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-404#comment-1471619043">#535</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník na první pohled vidí klíčové výhody, nemá důvod hledat v popisu</p>
+</blockquote>
+<h3>11.2. Přidat klíčové výhody/vlastnosti produktu nad konverzní tlačítko</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466942394">#294</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Pomáhá přesvědčit ke koupi, zvyšuje konverze i přes mírné posunutí CTA níže</p>
+</blockquote>
+<h3>11.3. Redesign pole pro editaci množství - + a - tlačítka po stranách místo šipek nahoru/dolů, větší touch zóny</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469125602">#373</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Šipky nahoru/dolů nejsou intuitivní, touch zóny příliš blízko sebe, Google penalizuje</p>
+</blockquote>
+<h3>11.4. Odstranit ikonu z konverzního tlačítka 'Přidat do košíku'</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467036215">#302</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Ikona v tlačítku snižuje konverze, lidé nad ní zbytečně přemýšlí. Testováno opakovaně</p>
+</blockquote>
+<h3>11.5. Zmenšit konverzní tlačítko - dát cenu, množství a CTA na jeden řádek</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1550589565">#658</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469153872">#382</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-157#comment-1467517821">#358</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Obří tlačítko nemusí vypadat jako tlačítko ale jako štítek, působí jako příliš agresivní tlačení na konverzi</p>
+</blockquote>
+<h3>11.6. Odstranit orámování u dostupnosti - nebude vypadat jako tlačítko, zobrazit klasicky zelenou barvou</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Příliš mnoho rámečků vypadajících jako tlačítka vedle sebe, zahlcující</p>
+</blockquote>
+<h3>11.7. Přidat odkaz 'Možnosti doručení' s popup oknem (loga dopravců, ceny, termíny)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník chce vědět dopravní info bez opuštění detailu</p>
+</blockquote>
+<h3>11.8. Přidat logo značky Mamutex na produktový detail</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467212696">#323</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Propagace značky, interní prolinkování, SEO</p>
+</blockquote>
+<h3>11.9. Přidat osobní kontakt s fotkou na produktový detail</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467090908">#310</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1551246746">#668</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-428#comment-1472858096">#560</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Větší jistota že se mohou ozvat při problému</p>
+</blockquote>
+<h3>11.10. Zobrazit hvězdičky hodnocení ve fixním pruhu při scrollu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1550606207">#661</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466942394">#294</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Vysoká hodnocení vedou ke konverzi když jsou vidět při scrollu</p>
+</blockquote>
+<h3>11.11. Zmenšit velikost nadpisu produktu - bere příliš místa</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-380#comment-1472878235">#565</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-406#comment-1472417360">#538</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Dlouhé názvy se hodně zalamují, na mobilu až na 6 řádků</p>
+</blockquote>
+<hr />
+<h2>12. Produktový detail - Obsah a Popis</h2>
+<h3>12.1. ZRUŠIT ZÁLOŽKY - veškerý obsah zobrazit pod sebou v tematických celcích (Top priorita 5/5)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467124786">#317</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-386#comment-1472987257">#574</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Záložky se špatně indexují Googlem, návštěvníci je ignorují/přehlédnou, trend se mění. Toto je jedna z top priorit</p>
+</blockquote>
+<h3>12.2. Navrhnout fixní navigační lištu s kotvami na části obsahu (obrázek, název, cena, skladovost, CTA)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467125882">#318</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467124786">#317</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Nahrazení záložek, návštěvník vidí kde je a může se orientovat. Lišta se přichytí k hornímu okraji při scrollu</p>
+</blockquote>
+<h3>12.3. Na mobilu nahradit fixní lištu rozbalovací nabídkou s kotvami</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467125882">#318</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Mobilní ekvivalent desktopové navigační lišty</p>
+</blockquote>
+<h3>12.4. Navrhnout mobilní fixní pruh ve spodní části (foto, cena, dostupnost, CTA)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463180279">#109</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-382#comment-1472902913">#567</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Na mobilu se hodně scrolluje, CTA musí být vždy viditelné. Zobrazí se když visitor scrollne pod hlavní CTA. Priorita 4/5</p>
+</blockquote>
+<h3>12.5. Parametry přesunout NAD produktový popis, zobrazit ve více sloupcích přes celou šířku</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467229303">#327</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465211523">#213</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-426#comment-1472447090">#554</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Priorita 5/5. Parametry jsou důležité pro indexaci a interní prolinkování, neschovávat za rozbalení</p>
+</blockquote>
+<h3>12.6. Navrhnout blok prezentace značky pod produktovým popisem (logo, název, popis, odkazy)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467212696">#323</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Podpora brandu Mamutex, interní prolinkování, důvěryhodnost</p>
+</blockquote>
+<h3>12.7. Přidat odkaz na video jak sestavit regál, jak se produkty balí</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1550597054">#660</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-145#comment-1467466021">#350</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467296640">#337</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Obava z kvality balení, obava z montáže - potřeba rozbít tyto obavy</p>
+</blockquote>
+<h3>12.8. Přidat FAQ sekci pod detail produktu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467349264">#340</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471056653">#467</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Ideální obsah pro AI mode a AI overview od Google, zvyšuje Authority Rank</p>
+</blockquote>
+<h3>12.9. Odstranit tlačítka sdílení na sociální sítě a tisk</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467356163">#341</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Nikdo je nepoužívá, berou pozornost od konverze</p>
+</blockquote>
+<h3>12.10. Přidat blok související články z blogu pod produktový popis</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Interní prolinkování, pomoc při rozhodování</p>
+</blockquote>
+<h3>12.11. Výhody u produktu by měly být specifické pro produkt, ne obecné USP eshopu</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-149#comment-1467494425">#353</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463177688">#106</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6095-16#comment-1469374700">#413</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Při porovnání 5 produktů vedle sebe čtou stále totéž, nepomáhá to ve výběru</p>
+</blockquote>
+<hr />
+<h2>13. Produktový detail - Množstevní sleva / Balíčky</h2>
+<h3>13.1. Kompletní předělání sekce množstevních slev/akčních balíčků</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-378#comment-1473386282">#597</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Doplněk nefunguje správně, tlačítka vypadají neaktivně (šedá), na mobilu se po kliknutí nic neděje viditelně, konverzní tlačítko mimo zobrazení</p>
+</blockquote>
+<h3>13.2. Opravit UX balíčků - po aktivaci se tlačítko 'Koupit výhodně v balíčku' tváří jako CTA ale nelze na něj kliknout</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-378#comment-1473386282">#597</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-157#comment-1467517821">#358</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-223#comment-1548460055">#629</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Priorita 5/5 - testující opakovaně klikali na falešné CTA, neviděli skutečné tlačítko</p>
+</blockquote>
+<h3>13.3. Přidat celkovou úsporu v Kč do názvu varianty balíčku</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467077625">#308</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Procenta + absolutní hodnota více lákají k výběru</p>
+</blockquote>
+<hr />
+<h2>14. Outfindo - Průvodce výběrem</h2>
+<h3>14.1. Grafický redesign celého Outfindo průvodce - sjednotit s design systémem eshopu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign, #outfindo</p>
+<blockquote>
+<p>Outfindo může customizovat, grafik navrhne a Outfindo zpracuje. Nyní nesedí s designem eshopu</p>
+</blockquote>
+<h3>14.2. Navrhnout oddělovač/vizuální oddělení mezi výběrem a výsledky v průvodci</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-11#comment-1465500180">#261</a> | <strong>Tagy:</strong> #grafika, #outfindo</p>
+<blockquote>
+<p>Potřeba jasně oddělit UI části výběru a výsledků</p>
+</blockquote>
+<h3>14.3. Zmenšit průvodce na výšku - příliš roztahaný, na malém monitoru nevidět produkty</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-11#comment-1465474911">#254</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Kompaktnější zobrazení, produkty musí být vidět</p>
+</blockquote>
+<h3>14.4. Přidat progress bar do průvodce - jasné kolik kroků celkem a kde se nacházíme</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-11#comment-1548799372">#639</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461523051">#24</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=0-1#comment-1459520458">#1</a> | <strong>Tagy:</strong> #grafika, #outfindo</p>
+<blockquote>
+<p>Aktuální navigace vypadá jako nedodělaná, mate návštěvníky</p>
+</blockquote>
+<h3>14.5. Přidat nadpis bloku průvodce např. 'Pomocník s výběrem' nebo 'Vyberte si svůj regál'</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462783471">#54</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-9#comment-1465425445">#243</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1463022353">#81</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci neví na co koukají, zaměňují s kategoriemi nad tím</p>
+</blockquote>
+<h3>14.6. Sjednotit vizuál výpisu produktů v průvodci se standardním výpisem kategorií</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #outfindo</p>
+<blockquote>
+<p>UI má být konzistentní</p>
+</blockquote>
+<h3>14.7. Sjednotit pořadí rekapitulace s pořadím kroků průvodce</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #outfindo</p>
+<blockquote>
+<p>Různé pořadí mate návštěvníky</p>
+</blockquote>
+<h3>14.8. Opravit čitelnost v průvodci - barvy textu/pozadí</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #outfindo</p>
+<blockquote>
+<p>Špatná čitelnost #808080 na #DFD6EA = FAIL</p>
+</blockquote>
+<h3>14.9. Skrýt prázdné informace o produktu v průvodci (nezobrazovat prázdná pole)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-11#comment-1548826274">#645</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467217065">#324</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466865585">#287</a> | <strong>Tagy:</strong> #outfindo</p>
+<blockquote>
+<p>Prázdné info mate testující - ptali se proč se to nenačetlo</p>
+</blockquote>
+<hr />
+<h2>15. Košík - Krok 1</h2>
+<h3>15.1. Produkty v košíku přes celou šířku okna</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469118935">#368</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1464912986">#180</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Větší prostor pro přehlednost, soustředění na finální výběr</p>
+</blockquote>
+<h3>15.2. Přesunout souhrn objednávky do spodní části v prvním kroku</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469131293">#376</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Možnost promovat související produkty, věrnostní program, navýšit hodnotu objednávky</p>
+</blockquote>
+<h3>15.3. Minimalizovat pole pro slevový kód - checkbox místo rozevřeného pole</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469153872">#382</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Rozevřené pole vypadá jako povinné, motivuje hledání kódů u konkurence přes Google</p>
+</blockquote>
+<h3>15.4. Druhý krok objednávky musí vypadat jako aktivní odkaz (ne šedý)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-320#comment-1473438768">#602</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469112137">#367</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1466958051">#296</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Šedá barva = neaktivní prvek, návštěvníci si myslí že nemohou kliknout</p>
+</blockquote>
+<h3>15.5. Redesign pole pro editaci množství v košíku - + a - tlačítka, větší touch zóny</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469125602">#373</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Stejné problémy jako na detailu - malé touch zóny, šipky místo +/-</p>
+</blockquote>
+<h3>15.6. Popup potvrzení při odstraňování produktu z košíku</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Snížení počtu produktů odebraných z košíku, data to potvrzují</p>
+</blockquote>
+<h3>15.7. Nepoužívat konverzní barvu pro tlačítko 'Pokračovat v nákupu' - jen pro hlavní CTA</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-225#comment-1548474120">#632</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Dvě konverzní tlačítka ruší plynulý přechod, priority 4/5</p>
+</blockquote>
+<h3>15.8. Blok Mamutex+ v košíku zobrazit v designu věrnostního programu</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469166710">#385</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Konzistentní prezentace VP na všech místech</p>
+</blockquote>
+<hr />
+<h2>16. Košík - Krok 2 (Doprava a platba)</h2>
+<h3>16.1. Osobní kontakt v minimalizované hlavičce košíku + Heureka badge</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Budování důvěryhodnosti v objednávkovém procesu, zvýšení dokončených objednávek</p>
+</blockquote>
+<h3>16.2. Přihlašovací formulář jako popup v košíku (ne přesměrování na jinou stránku)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-128#comment-1469282374">#404</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469177527">#388</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6095-13#comment-1473433414">#600</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Priorita 5/5 - odvádíme zákazníka pryč z košíku, nemusí se vrátit</p>
+</blockquote>
+<h3>16.3. Zvýraznit formulářová pole - výraznější ohraničení, hover efekt, aktivní stav</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-128#comment-1469293618">#406</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Šedá pole vypadají jako neaktivní, není jasné kde se nacházíme ve formuláři</p>
+</blockquote>
+<h3>16.4. Vyplněný text v polích plnou barvou (ne zástupným šedým stylem)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Vyplněné údaje vypadají jako placeholdery, hůře se kontrolují</p>
+</blockquote>
+<h3>16.5. Výraznější radiobutton pro volbu dopravy a platby</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-124#comment-1469233576">#394</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Nyní vypadá jako neaktivní prvek</p>
+</blockquote>
+<h3>16.6. Přidat popup s popisem neznámých dopravců/plateb na ikonku</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci neznají některé dopravce (Raben), potřebují jistotu správného výběru</p>
+</blockquote>
+<h3>16.7. Informativní hláška nad výběrem dopravy vysvětlující vyšší ceny (nadrozměrné zásilky)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-124#comment-1469268984">#401</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-9#comment-1465447143">#248</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci zvyklí na nižší ceny dopravy, nespojí si to s velikostí regálů</p>
+</blockquote>
+<h3>16.8. Zobrazit celou adresu a otevírací dobu u osobního odběru</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-124#comment-1469238422">#395</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-108#comment-1471226098">#482</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469118935">#368</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci odcházeli z košíku hledat info, nevrátili se</p>
+</blockquote>
+<h3>16.9. Zobrazit 'Zdarma' místo '0 Kč' u plateb</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-330#comment-1473465299">#609</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-128#comment-1469344190">#410</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Kouzelné slovo 'Zdarma' funguje lépe než 0 Kč</p>
+</blockquote>
+<h3>16.10. Zvětšit loga Google Pay a Apple Pay</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-124#comment-1469244129">#396</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Lepší čitelnost log platebních metod</p>
+</blockquote>
+<h3>16.11. Chybová hláška slevového kódu zobrazit u pole, ne nahoře na stránce</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469188194">#389</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-120#comment-1471402587">#514</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník se musí vracet k poli, špatný UX</p>
+</blockquote>
+<hr />
+<h2>17. Košík - Krok 3 (Rekapitulace)</h2>
+<h3>17.1. Sytější barva pro názvy produktů v rekapitulaci</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-124#comment-1469253092">#398</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Drobné šedé písmo se hůře čte, potřeba rychlé kontroly</p>
+</blockquote>
+<h3>17.2. Zobrazit výhody registrace u checkboxu registrace v 3. kroku</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-128#comment-1469325888">#409</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Motivace k registraci přímo při objednávce</p>
+</blockquote>
+<hr />
+<h2>18. Foxentry (Validace adres)</h2>
+<h3>18.1. Změnit červený křížek validace na žlutý vykřičník</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1465122570">#200</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6095-16#comment-1469374700">#413</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469177527">#388</a> | <strong>Tagy:</strong> </p>
+<blockquote>
+<p>Červený křížek je příliš agresivní, návštěvníci si myslí že nemohou odeslat objednávku. Již změněno dle update</p>
+</blockquote>
+<hr />
+<h2>19. Prázdný košík</h2>
+<h3>19.1. Redesign prázdného košíku - brandové prvky, rozcestník kategorií s fotkami, osobní kontakt, výhody</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Stránka musí vrátit návštěvníky do nákupu</p>
+</blockquote>
+<h3>19.2. Přidat posuvník naposledy prohlížených produktů ('Rozmysleli jste se?')</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Možnost vrátit se k produktům které byly v košíku</p>
+</blockquote>
+<h3>19.3. Přidat drobečkovou navigaci</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Návštěvník musí vědět kde se nachází</p>
+</blockquote>
+<hr />
+<h2>20. Přihlášení / Registrace</h2>
+<h3>20.1. Přidat křížek pro zavření přihlašovacího panelu na mobilu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-426#comment-1472446032">#552</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467058591">#306</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-378#comment-1473386282">#597</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvníci neví že musí kliknout znovu na ikonu uživatele</p>
+</blockquote>
+<h3>20.2. Tlačítko přihlášení na celou šířku na mobilu</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-426#comment-1472447090">#554</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Širší tlačítko je pohodlnější na kliknutí</p>
+</blockquote>
+<h3>20.3. Redesign registrační stránky - brandové prvky, výhody registrace, tlačítka přihlášení vlevo</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-235#comment-1463351324">#157</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-118#comment-1471400453">#512</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Stránka by měla prezentovat výhody registrace a být vizuálně atraktivní</p>
+</blockquote>
+<hr />
+<h2>21. Kontaktní stránka</h2>
+<h3>21.1. Komplexní redesign kontaktní stránky - fotky týmu, formulář, FAQ, sociální sítě, fakturační údaje, mapa s fotkou skladu</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Obsahové stránky jsou příležitost odlišit se od konkurence, budovat důvěryhodnost</p>
+</blockquote>
+<h3>21.2. Přidat kontaktní formulář přímo na stránku</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-108#comment-1471229407">#483</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Zjednodušení cesty pro návštěvníky s dotazy, nemusí přecházet do emailového klienta</p>
+</blockquote>
+<h3>21.3. Kompaktní obsahový blok pro výdejní sklad (adresa, mapa, foto, instrukce, navigace)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-108#comment-1471226098">#482</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471066924">#471</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Obsah musí být vizuálně propojen, návštěvníci skenují a nemusí vidět instrukce pod mapou</p>
+</blockquote>
+<h3>21.4. Přidat rozcestník na další stránky (Náš příběh, Doprava a platba, atd.)</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-108#comment-1471257044">#487</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Interní prolinkování a navigace</p>
+</blockquote>
+<hr />
+<h2>22. Doprava a platba (stránka)</h2>
+<h3>22.1. Přidat loga dopravců a platebních metod k jednotlivým řádkům</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Rychlejší vizuální orientace</p>
+</blockquote>
+<h3>22.2. Informativní box o dopravě zvýraznit (podbarvení světle fialovou, ikona)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Důležitá informace o cenách dopravy je snadno přehlédnutelná</p>
+</blockquote>
+<h3>22.3. Přidat FAQ sekci o dopravách a platbách</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-108#comment-1471235009">#484</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Zodpovědění dotazů přímo na stránce</p>
+</blockquote>
+<hr />
+<h2>23. Reklamace a vrácení zboží</h2>
+<h3>23.1. Přidat infografiku vizualizující proces reklamace krok za krokem</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-112#comment-1471359480">#500</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Velké množství textu, vizuální přehled pomůže pochopit postup</p>
+</blockquote>
+<h3>23.2. Přidat rozcestník s kotvami na jednotlivé typy případů v horní části</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-112#comment-1471361736">#501</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1470979351">#453</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467125882">#318</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Rychlejší nalezení relevantního obsahu</p>
+</blockquote>
+<h3>23.3. Tlačítko formuláře reklamace výrazněji a výše na stránce</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-112#comment-1471368095">#502</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-207#comment-1465361091">#238</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Nyní je pouze v textu, snadno přehlédnutelné, kvůli tomu návštěvník přišel</p>
+</blockquote>
+<h3>23.4. Přidat dlaždici s osobním kontaktem ('Nejste si jisti? Zavolejte nám!')</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-112#comment-1471358817">#499</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Zachycení nerozhodných návštěvníků</p>
+</blockquote>
+<h3>23.5. Přidat FAQ k reklamacím</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Zodpovědění častých dotazů</p>
+</blockquote>
+<hr />
+<h2>24. Mamutex+ (Věrnostní program stránka)</h2>
+<h3>24.1. Přidat výrazné CTA k registraci - minimálně 2x na stránce</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-116#comment-1471383152">#505</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461714680">#32</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Priorita 4/5 - úplně chybí viditelná výzva k registraci, to je hlavní cíl stránky</p>
+</blockquote>
+<h3>24.2. Více infografik a krátkých textů v odrážkách místo dlouhých textů</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Příliš mnoho textu, návštěvníci nepřečtou</p>
+</blockquote>
+<h3>24.3. Přidat storytelling/reference zákazníků (kolik ušetřili)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Social proof, motivace k registraci</p>
+</blockquote>
+<h3>24.4. Přidat FAQ sekci k věrnostnímu programu</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Zodpovědění dotazů</p>
+</blockquote>
+<h3>24.5. Konzistentní zobrazení mincí VP na všech místech kde se Mamutex+ zmiňuje</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Sjednocení vizuální identity VP</p>
+</blockquote>
+<hr />
+<h2>25. Blog / Poradna</h2>
+<h3>25.1. Náhledové obrázky u VŠECH článků - priorita 5/5</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-102#comment-1470939869">#449</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-406#comment-1472417360">#538</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471081162">#473</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Chybí náhledové obrázky, pozitivní vliv na proklikovost a SEO. Častá chyba Shoptet</p>
+</blockquote>
+<h3>25.2. Vytvořit šablonu článku vč. podpisu autora</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Jednotný formát článků, autor s fotkou a odkazem na profil pro důvěryhodnost</p>
+</blockquote>
+<h3>25.3. Stránkový výpis všech článků na hlavní stránce blogu (ne jen 3)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-100#comment-1470910368">#444</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-196#comment-1465331842">#231</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Nyní se zobrazují pouze 3 články</p>
+</blockquote>
+<h3>25.4. První článek s větší vizuální prioritou (feature article)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Upoutání pozornosti na nejnovější/nejdůležitější článek</p>
+</blockquote>
+<h3>25.5. Přidat ilustrační obrázky ke kategoriím článků</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Lepší uvedení tématu</p>
+</blockquote>
+<h3>25.6. Přidat počet článků za název kategorie</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-100#comment-1470895086">#439</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Lepší přehled o rozsahu obsahu</p>
+</blockquote>
+<h3>25.7. Tematický vizuál v horní části kategorií článků se signature prvky</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471043453">#464</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Uvedení tématu, naladění atmosféry značky</p>
+</blockquote>
+<h3>25.8. Vylepšit stránkování článků - čísla stránek místo jen šipky</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-102#comment-1470973104">#452</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Návštěvníci si mohou pamatovat na které stránce článek byl</p>
+</blockquote>
+<h3>25.9. Šedá tlačítka filtrů/kategorií na blogu nahradit světle fialovou</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Šedá vypadá jako neaktivní</p>
+</blockquote>
+<h3>25.10. Přidat ikonu šipky '&gt;' k boxům podkategorií blogu</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-100#comment-1470915373">#447</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-398#comment-1471465681">#521</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-94#comment-1469400886">#420</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Aby bylo jasné že jde o proklik, nyní vypadají jako neaktivní</p>
+</blockquote>
+<hr />
+<h2>26. Detail článku</h2>
+<h3>26.1. Přidat úvodní fotografii na začátek článku</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471032042">#463</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Lepší uvedení článku, navození atmosféry, Google pozitivně hodnotí vizuální materiály</p>
+</blockquote>
+<h3>26.2. Přidat přehled obsahu (table of contents) u delších článků</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1470979351">#453</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Rychlá navigace, pomáhá SEO</p>
+</blockquote>
+<h3>26.3. Navrhnout vizuální bloky pro tipy, důležité info, zajímavosti v článcích (signature prvky)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471000623">#458</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-122#comment-1469125602">#373</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467039375">#303</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Zpřehlednění obsahu, podvědomé vnímání identity, AI mode od Google tyto prvky hodnotí</p>
+</blockquote>
+<h3>26.4. Bohatší okénko autora pod článkem (fotka, popis, odkaz na profil)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471056653">#467</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Osobnější dojem, Authority rank, důvěryhodnost</p>
+</blockquote>
+<h3>26.5. Přidat subkonverzi na konec článku (newsletter, slevový kupón, odkaz na produkty)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471055595">#465</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462783471">#54</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník musí mít co dělat po přečtení</p>
+</blockquote>
+<h3>26.6. Skrýt prázdné diskuze pod články</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471066924">#471</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Prázdné diskuze působí že obsah nikoho nezajímá</p>
+</blockquote>
+<h3>26.7. Pod článkem zobrazit náhledy dalších článků (ne jen textové odkazy)</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471058222">#469</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-100#comment-1470898880">#440</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník neví na jaký obsah bude přecházet, snižuje proklikovost</p>
+</blockquote>
+<h3>26.8. Zachovat konzistentní formát produktové karty i v článcích</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471081162">#473</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Zmenšení produktové karty může negativně ovlivnit proklikovost</p>
+</blockquote>
+<h3>26.9. Produkty v článcích zobrazit formou posuvníku</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471076218">#472</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Více produktů k prohlížení</p>
+</blockquote>
+<hr />
+<h2>27. Značky / Výrobci</h2>
+<h3>27.1. Vytvořit stránku výpisu značek s hlavní prioritou Mamutex</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=5-92#comment-1466056386">#270</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Stránka na eshopu chybí, důvěryhodnost, SEO</p>
+</blockquote>
+<h3>27.2. Navrhnout detail značky - logo, signature prvky/vizuál, popis, kategorie značky, články, videa</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Podpora brandu, SEO, navigace</p>
+</blockquote>
+<hr />
+<h2>28. Chybová stránka (404)</h2>
+<h3>28.1. Redesign 404 stránky - vizuální potvrzení chyby, rozcestník kategorií, nejprodávanější produkty, výhody, odkazy</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-120#comment-1471402587">#514</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Stránka musí lákat dále do obsahu, ne nechat návštěvníka odejít</p>
+</blockquote>
+<hr />
+<h2>29. Patička (Footer)</h2>
+<h3>29.1. Konkurenční výhody zobrazovat nad patičkou na všech stránkách</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Budování důvěryhodnosti na všech landing pages</p>
+</blockquote>
+<hr />
+<h2>30. Recenze a Hodnocení</h2>
+<h3>30.1. Přidat štítek 'Ověřená recenze' k recenzím z Heureka.cz</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Zvýšení důvěryhodnosti recenzí</p>
+</blockquote>
+<h3>30.2. Recenze kurzívou jako přímá řeč</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Lepší vizuální oddělení, osobnější dojem</p>
+</blockquote>
+<h3>30.3. Řazení recenzí podle data přidání</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1525068158">#626</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Aktuální hodnocení, důvěryhodnost - testující se ptali jestli si eshop recenze negeneruje</p>
+</blockquote>
+<h3>30.4. Opravit špatnou čitelnost hvězdiček hodnocení (žlutá #F0B825 na bílé = FAIL)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Nesplňuje standard kontrastu</p>
+</blockquote>
+<h3>30.5. Přidat rozsah let na trhu k hodnocení eshopu</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1525245500">#628</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Návštěvník musí vědět že nejste noví na trhu</p>
+</blockquote>
+<hr />
+<h2>31. Produktová karta (component)</h2>
+<h3>31.1. Navrhnout rozšířenou produktovou kartu s parametry pod názvem (nosnost, rozměry, materiál)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-428#comment-1472447695">#555</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-175#comment-1464972421">#191</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Testující chtěli vidět parametry přímo ve výpisu bez proklikávání na detail, priorita 5/5</p>
+</blockquote>
+<h3>31.2. Přidat hover efekt na sekundární foto s rozměry/parametry</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462783471">#54</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-217#comment-1463230872">#129</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462822194">#64</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Při hoveru nad produktem zobrazit technickou fotku, inspirace z Notino/Alza</p>
+</blockquote>
+<h3>31.3. Celá produktová karta jako klikatelná oblast (nejen fotka a název)</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1524991573">#621</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-196#comment-1465333594">#232</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-215#comment-1463208018">#120</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Testující klikali vedle fotky a nic se nestalo, hover efekt sugeruje celý box je odkaz</p>
+</blockquote>
+<h3>31.4. Sjednotit štítky desktop/mobil (zaoblené vs ostré rohy)</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Konzistence napříč platformami</p>
+</blockquote>
+<h3>31.5. Prvek 'Skladem' by neměl vypadat jako tlačítko</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-11#comment-1548811754">#640</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-223#comment-1548460055">#629</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1550610660">#662</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Testující na to klikali, mysleli že je to tlačítko</p>
+</blockquote>
+<h3>31.6. Přidat volbu počtu kusů přímo do produktové karty na mobilu (testovat)</h3>
+<p><strong>Priorita:</strong> Nizka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-404#comment-1472423430">#540</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-378#comment-1473386282">#597</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Může intuitivně vést k přidání více kusů</p>
+</blockquote>
+<hr />
+<h2>32. Různé / Obecné úpravy</h2>
+<h3>32.1. Přegenerovat AI fotky produktů novým modelem</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Starý AI model, fotky nevypadají dostatečně kvalitně</p>
+</blockquote>
+<h3>32.2. Drobečková navigace - zobrazovat kompletní strukturu vč. nižších úrovní a ikony domečku</h3>
+<p><strong>Priorita:</strong> Vysoka | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-338#comment-1473216818">#577</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-344#comment-1473309270">#587</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Návštěvník musí vědět kde ve struktuře je, pomáhá SEO internímu prolinkování</p>
+</blockquote>
+<h3>32.3. Sjednotit ovládací prvky rozbalení/sbalení (+ -  vs šipky) napříč celým webem</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> — | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Nekonzistentní UI mate návštěvníky</p>
+</blockquote>
+<h3>32.4. Křížek pro zavření modalu - dostatek prostoru od rohu, jednotný styl bez obrysu</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-320#comment-1473453383">#604</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6048-11#comment-1465504530">#263</a> | <strong>Tagy:</strong> #grafika</p>
+<blockquote>
+<p>Málo prostoru kolem křížku stresuje, obrys bere zbytečně pozornost</p>
+</blockquote>
+<h3>32.5. Navrhnout bannery pro produktové výpisy v rámci design systému</h3>
+<p><strong>Priorita:</strong> Stredna | <strong>Figma:</strong> <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002-406#comment-1472417360">#538</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-116#comment-1471390424">#507</a> | <a href="https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1462873078">#73</a> | <strong>Tagy:</strong> #grafika, #redesign</p>
+<blockquote>
+<p>Bannery nad/pod produkty pro kampaně a akce, konzistentní design</p>
+</blockquote>
+<hr />
+<p><em>Celkom 200 uloh, 312 odkazov na Figma komentare.</em><br />
+<em>Kliknite na #cislo pre presmerovanie priamo na komentar vo Figme.</em></p>
+</body>
+</html>

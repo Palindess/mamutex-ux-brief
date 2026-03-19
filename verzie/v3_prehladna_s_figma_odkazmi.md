@@ -4,7 +4,7 @@
 **UX konzultant:** Kvasnicka Jan | **Klient:** Radim Bures, radek | **Vyvojar:** Samuel Ondrisak  
 **Platforma:** Shoptet  
 **Datum:** 2026-03-19  
-**Verzia:** v4
+**Verzia:** v3
 
 ---
 
@@ -12,8 +12,7 @@
 
 - [v1 - Povodna struktura (bez odkazov)](verzie/v1_povodna_struktura.md)
 - [v2 - Vsetky komentare (607 uloh)](verzie/v2_so_vsetkymi_komentarmi.md) | [HTML](verzie/v2_so_vsetkymi_komentarmi.html)
-- [v3 - Prehladna struktura + Figma odkazy](verzie/v3_prehladna_s_figma_odkazmi.md) | [HTML](verzie/v3_prehladna_s_figma_odkazmi.html)
-- **v4 - Doplnene chybajuce Figma odkazy (spacing bod 1.8)** (aktualna)
+- **v3 - Prehladna struktura + Figma odkazy** (aktualna)
 
 ---
 
@@ -68,9 +67,9 @@
 > Několik míst nesplňuje AA standard, barvy jako #808080 na #DFD6EA jsou FAIL. I splněné AA standardy mohou mít zhoršenou čitelnost
 
 ### 1.8. Sjednotit spacing/vzdušnost - na mnoha místech příliš velké mezery oddalující obsah, na jiných příliš málo
-**Priorita:** Vysoka | **Figma:** [#666](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002:358#comment-1550991911) | [#544](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002:412#comment-1472436066) | [#572](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002:386#comment-1472979007) | [#331](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001:134#comment-1467251444) | [#53](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001:211#comment-1462212461) | [#70](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001:211#comment-1462854572) | [#97](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001:211#comment-1463091833) | [+20 dalších](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6002:358#comment-1550991911) | **Tagy:** #grafika, #redesign
+**Priorita:** Vysoka | **Figma:** — | **Tagy:** #grafika, #redesign
 
-> Klíčový prvek designu, špatný spacing odděluje související informace nebo zbytečně prodlužuje stránku. Celkem 27 komentárov sa týka spacingu - príliš veľa vzdušnosti (#666, #544, #572, #542, #549, #532, #331, #607, #53, #70, #97, #339, #326, #456, #495) alebo príliš málo (#168, #560, #601, #604, #125, #128)
+> Klíčový prvek designu, špatný spacing odděluje související informace nebo zbytečně prodlužuje stránku
 
 ### 1.9. Vytvořit signature prvky a brandovou identitu pro vizuální obsah (infografiky, bloky v článcích, bannery)
 **Priorita:** Vysoka | **Figma:** [#458](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-104#comment-1471000623) | [#333](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-134#comment-1467258993) | [#16](https://www.figma.com/design/ZRnydfJQYihgeCcNMXZ09q/Mamutex.cz---Anal%C3%BDza-pou%C5%BEitelnosti?node-id=6001-211#comment-1461008782) | **Tagy:** #grafika, #redesign
